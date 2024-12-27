@@ -24,32 +24,23 @@ Then edit `.env.local` and set your `BRIGHT_PLAYWRIGHT_URL` for the Playwright C
 
 ## Usage
 
-The scraper supports several commands:
+The scraper currently supports viewing content from web pages:
 
-1. Scrape all links from a URL and save their content:
-```bash
-pnpm run scrape <url> <folder-name>
-```
-Example:
-```bash
-pnpm run scrape https://example.com docs
-```
-This will save all scraped content in `scraped-content/docs/`.
-
-2. Show all links from a URL:
-```bash
-pnpm run scrape show-link <url>
-```
-
-3. Show content from a specific URL:
 ```bash
 pnpm run scrape show-content <url>
 ```
 
+Example:
+```bash
+pnpm run scrape show-content https://example.com
+```
+
+This will display the HTML content of the specified URL.
+
 ## Features
 
-- Extracts clean text content from web pages
-- Removes scripts, styles, and other non-content elements
-- Saves content in organized text files
-- Supports recursive link scraping
-- CDP connection for browser automation
+- Connects to browser using CDP
+- Waits for network idle state before scraping
+- Handles page timeouts (60 seconds)
+- Error handling and reporting
+- Environment variable configuration
