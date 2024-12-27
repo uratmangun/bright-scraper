@@ -1,0 +1,127 @@
+Title: Accordion - shadcn/ui
+URL: https://ui.shadcn.com/docs/components
+
+Getting Started
+Introduction
+Installation
+components.json
+Theming
+Dark mode
+CLI
+Monorepo
+New
+Next.js 15 + React 19
+Typography
+Open in v0
+Figma
+Changelog
+Installation
+Next.js
+Vite
+Remix
+Astro
+Laravel
+Gatsby
+Manual
+Components
+Accordion
+Alert
+Alert Dialog
+Aspect Ratio
+Avatar
+Badge
+Breadcrumb
+Button
+Calendar
+Card
+Carousel
+Chart
+Checkbox
+Collapsible
+Combobox
+Command
+Context Menu
+Data Table
+Date Picker
+Dialog
+Drawer
+Dropdown Menu
+Form
+Hover Card
+Input
+Input OTP
+Label
+Menubar
+Navigation Menu
+Pagination
+Popover
+Progress
+Radio Group
+Resizable
+Scroll Area
+Select
+Separator
+Sheet
+Sidebar
+Skeleton
+Slider
+Sonner
+Switch
+Table
+Tabs
+Textarea
+Toast
+Toggle
+Toggle Group
+Tooltip
+Docs
+Accordion
+Accordion
+A vertically stacked set of interactive headings that each reveal a section of content.
+Docs
+API Reference
+Preview
+Code
+Style:
+New York
+Open in
+Copy
+Is it accessible?
+Is it styled?
+Is it animated?
+Installation
+CLI
+Manual
+pnpm
+npm
+yarn
+bun
+pnpm dlx shadcn@latest add accordion
+Copy
+Usage
+import {
+Accordion,
+AccordionContent,
+AccordionItem,
+AccordionTrigger,
+} from "@/components/ui/accordion"
+Copy
+<Accordion type="single" collapsible>
+<AccordionItem value="item-1">
+<AccordionTrigger>Is it accessible?</AccordionTrigger>
+<AccordionContent>
+Yes. It adheres to the WAI-ARIA design pattern.
+</AccordionContent>
+</AccordionItem>
+</Accordion>
+Copy
+Manual
+Alert
+On This Page
+Installation
+Usage
+Bring your app built with shadcn to life on Vercel
+Trusted by OpenAI, Sonos, Chick-fil-A, and more.
+Vercel provides tools and infrastructure to deploy apps and features at scale.
+Deploy Now
+Deploy to Vercel

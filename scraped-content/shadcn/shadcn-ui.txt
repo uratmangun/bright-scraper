@@ -1,0 +1,171 @@
+Title: shadcn/ui
+URL: https://ui.shadcn.com/
+
+Monorepo support
+Build your component library
+Beautifully designed components that you can copy and paste into your apps. Made with Tailwind CSS. Open source.
+Get Started
+Browse Blocks
+Examples
+Mail
+Dashboard
+Tasks
+Playground
+Forms
+Music
+Authentication
+Total Revenue
+$15,231.89
++20.1% from last month
+Subscriptions
++2350
++180.1% from last month
+Team Members
+Invite your team members to collaborate.
+Sofia Davis
+m@example.com
+Owner
+Jackson Lee
+p@example.com
+Member
+Isabella Nguyen
+i@example.com
+Member
+Cookie Settings
+Manage your cookie settings here.
+Strictly Necessary
+These cookies are essential in order to use the website and use its features.
+Functional Cookies
+These cookies allow the website to provide personalized functionality.
+Performance Cookies
+These cookies help to improve the performance of the website.
+Save preferences
+Payment Method
+Add a new payment method to your account.
+Card
+Paypal
+Apple
+Name
+City
+Card number
+Expires
+Month
+Year
+Year
+CVC
+Continue
+Sofia Davis
+m@example.com
+New message
+Hi, how can I help you today?
+Hey, I'm having trouble with my account.
+What seems to be the problem?
+I can't log in.
+Send
+Create an account
+Enter your email below to create your account
+GitHub
+Google
+OR CONTINUE WITH
+Email
+Password
+Create account
+Report an issue
+What area are you having problems with?
+Area
+Billing
+Security Level
+Severity 2
+Subject
+Description
+Cancel
+Submit
+June 2023
+Su
+Mo
+Tu
+We
+Th
+Fr
+Sa
+28
+29
+30
+31
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+1
+Move Goal
+Set your daily activity goal.
+Decrease
+350
+CALORIES/DAY
+Increase
+Set Goal
+Exercise Minutes
+Your exercise minutes are ahead of where you normally are.
+Payments
+Manage your payments.
+Columns
+Status	Email
+Amount
+Success
+ken99@yahoo.com
+$316.00
+Open menu
+Success
+abe45@gmail.com
+$242.00
+Open menu
+Processing
+monserrat44@gmail.com
+$837.00
+Open menu
+Failed
+carmella@hotmail.com
+$721.00
+Open menu
+0 of 4 row(s) selected.
+PreviousNext
+Share this document
+Anyone with the link can view this document.
+Link
+Copy Link
+People with access
+Olivia Martin
+m@example.com
+Can edit
+Isabella Nguyen
+b@example.com
+Can view
+Sofia Davis
+p@example.com
+Can view

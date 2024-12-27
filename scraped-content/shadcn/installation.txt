@@ -1,0 +1,129 @@
+Title: Installation - shadcn/ui
+URL: https://ui.shadcn.com/docs/installation
+
+Getting Started
+Introduction
+Installation
+components.json
+Theming
+Dark mode
+CLI
+Monorepo
+New
+Next.js 15 + React 19
+Typography
+Open in v0
+Figma
+Changelog
+Installation
+Next.js
+Vite
+Remix
+Astro
+Laravel
+Gatsby
+Manual
+Components
+Accordion
+Alert
+Alert Dialog
+Aspect Ratio
+Avatar
+Badge
+Breadcrumb
+Button
+Calendar
+Card
+Carousel
+Chart
+Checkbox
+Collapsible
+Combobox
+Command
+Context Menu
+Data Table
+Date Picker
+Dialog
+Drawer
+Dropdown Menu
+Form
+Hover Card
+Input
+Input OTP
+Label
+Menubar
+Navigation Menu
+Pagination
+Popover
+Progress
+Radio Group
+Resizable
+Scroll Area
+Select
+Separator
+Sheet
+Sidebar
+Skeleton
+Slider
+Sonner
+Switch
+Table
+Tabs
+Textarea
+Toast
+Toggle
+Toggle Group
+Tooltip
+Docs
+Installation
+Installation
+How to install dependencies and structure your app.
+Frameworks
+Next.js
+Vite
+Remix
+Astro
+Laravel
+Gatsby
+Manual
+TypeScript
+This project and the components are written in TypeScript. We recommend using TypeScript for your project as well.
+However we provide a JavaScript version of the components as well. The JavaScript version is available via the cli.
+To opt-out of TypeScript, you can use the tsx flag in your components.json file.
+components.json
+{
+"style": "default",
+"tailwind": {
+"config": "tailwind.config.js",
+"css": "src/app/globals.css",
+"baseColor": "zinc",
+"cssVariables": true
+},
+"rsc": false,
+"tsx": false,
+"aliases": {
+"utils": "~/lib/utils",
+"components": "~/components"
+}
+}
+Copy
+To configure import aliases, you can use the following jsconfig.json:
+jsconfig.json
+{
+"compilerOptions": {
+"paths": {
+"@/*": ["./*"]
+}
+}
+}
+Copy
+Introduction
+components.json
+On This Page
+Frameworks
+TypeScript
+Bring your app built with shadcn to life on Vercel
+Trusted by OpenAI, Sonos, Chick-fil-A, and more.
+Vercel provides tools and infrastructure to deploy apps and features at scale.
+Deploy Now
+Deploy to Vercel
