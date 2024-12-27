@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "dotenv": "^16.4.7",
-    "playwright": "^1.49.1"
+    "https-proxy-agent": "^7.0.6",
+    "ky": "^1.7.4",
+    "playwright": "^1.49.1",
+    "request-promise": "^4.2.6"
   }
 }
