@@ -19,13 +19,16 @@ importers:
         version: 1.7.4
       openai:
         specifier: ^4.77.0
-        version: 4.77.0
+        version: 4.77.0(zod@3.24.1)
       playwright:
         specifier: ^1.49.1
         version: 1.49.1
       request-promise:
         specifier: ^4.2.6
         version: 4.2.6(request@2.88.2)
+      zod:
+        specifier: ^3.24.1
+        version: 3.24.1
     devDependencies:
       bun-types:
         specifier: latest
@@ -342,6 +345,9 @@ packages:
   whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
 
+  zod@3.24.1:
+    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
+
 snapshots:
 
   '@types/node-fetch@2.6.12':
@@ -527,7 +533,7 @@ snapshots:
 
   oauth-sign@0.9.0: {}
 
-  openai@4.77.0:
+  openai@4.77.0(zod@3.24.1):
     dependencies:
       '@types/node': 18.19.68
       '@types/node-fetch': 2.6.12
@@ -536,6 +542,8 @@ snapshots:
       form-data-encoder: 1.7.2
       formdata-node: 4.4.1
       node-fetch: 2.7.0
+    optionalDependencies:
+      zod: 3.24.1
     transitivePeerDependencies:
       - encoding
 
@@ -646,3 +654,5 @@ snapshots:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
+
+  zod@3.24.1: {}

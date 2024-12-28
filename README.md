@@ -7,7 +7,21 @@ A powerful web scraping utility built with Playwright that can extract content a
 - Node.js 18+
 - pnpm (recommended) or bun
 
-## Setup
+## Installation & Usage
+
+You can use this tool in two ways:
+
+### 1. Using npx (Recommended)
+
+Run directly without installation using npx:
+
+```bash
+npx @uratmangun/scraper-tool show-content <url>
+# or
+npx @uratmangun/scraper-tool search "<query>"
+```
+
+### 2. Local Installation
 
 1. Install dependencies:
 ```bash
@@ -22,30 +36,38 @@ cp .env.example .env.local
 ```
 Then edit `.env.local` and set your `BRIGHT_PLAYWRIGHT_URL` for the Playwright CDP connection.
 
-## Usage
-
-The scraper supports the following commands:
+## Commands
 
 ### View Content
 ```bash
-pnpm run scrape show-content <url>
+# Using npx
+npx @uratmangun/scraper-tool show-content <html|text> <url>
+
+# Using local installation
+pnpm run scrape show-content <html|text> <url>
 ```
 
 Example:
 ```bash
-pnpm run scrape show-content https://example.com
+npx @uratmangun/scraper-tool show-content html https://example.com
+# or
+npx @uratmangun/scraper-tool show-content text https://example.com
 ```
 
-This will display the HTML content of the specified URL.
+This will display either the HTML or plain text content of the specified URL, depending on the format chosen.
 
 ### Google Search
 ```bash
-pnpm run search <query>
+# Using npx
+npx @uratmangun/scraper-tool search "<query>"
+
+# Using local installation
+pnpm run search "<query>"
 ```
 
 Example:
 ```bash
-pnpm run search "web scraping tutorials"
+npx @uratmangun/scraper-tool search "web scraping tutorials"
 ```
 
 This will fetch and display the HTML content of Google search results for your query.

@@ -6,9 +6,10 @@ dotenv.config({ path: '.env.local' });
 /**
  * Scrapes content from a given URL using Playwright with CDP connection
  * @param {string} url - The URL to scrape
- * @returns {Promise<string>} - The scraped content
+ * @param {string} format - The output format ('html' or 'text')
+ * @returns {Promise<Object>} - The scraped content
  */
-export async function scrapeUrl(url) {
+export async function scrapeUrl(url, format = 'html') {
     if (!process.env.BRIGHT_PLAYWRIGHT_URL) {
         throw new Error('BRIGHT_PLAYWRIGHT_URL environment variable is not set');
     }
@@ -22,9 +23,13 @@ export async function scrapeUrl(url) {
         await page.goto(url, { timeout: 60000 });
         await page.waitForLoadState('networkidle');
 
-        // Get HTML content
-        const html = await page.content();
-        return { html };
+        if (format === 'text') {
+            const text = await page.textContent('body');
+            return { text };
+        } else {
+            const html = await page.content();
+            return { html };
+        }
     } catch (error) {
         console.error('Error during scraping:', error);
         throw error;
@@ -34,14 +39,15 @@ export async function scrapeUrl(url) {
 }
 
 /**
- * Shows the HTML content of a given URL
+ * Shows the content of a given URL in specified format
+ * @param {string} format - The output format ('html' or 'text')
  * @param {string} url - The URL to show content from
  * @returns {Promise<void>}
  */
-async function showContent(url) {
+async function showContent(format, url) {
     try {
-        const { html } = await scrapeUrl(url);
-        console.log(html);
+        const result = await scrapeUrl(url, format);
+        console.log(result[format]);
     } catch (error) {
         console.error('Error showing content:', error);
         throw error;
@@ -52,19 +58,26 @@ async function showContent(url) {
 async function main() {
     const [command, ...args] = process.argv.slice(2);
 
-    if (!command || !args.length) {
-        console.error('Please provide a URL to scrape.');
-        console.error('Usage: pnpm run scrape show-content <url>');
+    if (!command || args.length < 2) {
+        console.error('Please provide the format and URL to scrape.');
+        console.error('Usage: pnpm run scrape show-content <html|text> <url>');
         process.exit(1);
     }
 
     try {
         if (command !== 'show-content') {
             console.error('Invalid command. Only "show-content" is supported.');
-            console.error('Usage: pnpm run scrape show-content <url>');
+            console.error('Usage: pnpm run scrape show-content <html|text> <url>');
             process.exit(1);
         }
-        await showContent(args[0]);
+
+        const format = args[0].toLowerCase();
+        if (format !== 'html' && format !== 'text') {
+            console.error('Invalid format. Use either "html" or "text".');
+            process.exit(1);
+        }
+
+        await showContent(format, args[1]);
     } catch (error) {
         console.error('Operation failed:', error);
         process.exit(1);
