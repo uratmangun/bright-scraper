@@ -6,7 +6,8 @@
     "bun-types": "latest"
   },
   "scripts": {
-    "scrape": "node scripts/scrape.mjs"
+    "scrape": "node scripts/scrape.mjs",
+    "search": "node scripts/search.mjs"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -15,6 +16,7 @@
     "dotenv": "^16.4.7",
     "https-proxy-agent": "^7.0.6",
     "ky": "^1.7.4",
+    "openai": "^4.77.0",
     "playwright": "^1.49.1",
     "request-promise": "^4.2.6"
   }

@@ -24,8 +24,9 @@ Then edit `.env.local` and set your `BRIGHT_PLAYWRIGHT_URL` for the Playwright C
 
 ## Usage
 
-The scraper currently supports viewing content from web pages:
+The scraper supports the following commands:
 
+### View Content
 ```bash
 pnpm run scrape show-content <url>
 ```
@@ -37,6 +38,18 @@ pnpm run scrape show-content https://example.com
 
 This will display the HTML content of the specified URL.
 
+### Google Search
+```bash
+pnpm run search <query>
+```
+
+Example:
+```bash
+pnpm run search "web scraping tutorials"
+```
+
+This will fetch and display the HTML content of Google search results for your query.
+
 ## Features
 
 - Connects to browser using CDP
@@ -44,3 +57,4 @@ This will display the HTML content of the specified URL.
 - Handles page timeouts (60 seconds)
 - Error handling and reporting
 - Environment variable configuration
+- Google search functionality
