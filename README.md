@@ -16,7 +16,7 @@ You can use this tool in two ways:
 Run directly without installation using npx:
 
 ```bash
-npx @uratmangun/scraper-tool show-content <url>
+npx @uratmangun/scraper-tool scrape <text|html> <url>
 # or
 npx @uratmangun/scraper-tool search "<query>"
 ```
@@ -41,17 +41,17 @@ Then edit `.env.local` and set your `BRIGHT_PLAYWRIGHT_URL` for the Playwright C
 ### View Content
 ```bash
 # Using npx
-npx @uratmangun/scraper-tool show-content <html|text> <url>
+npx @uratmangun/scraper-tool scrape <html|text> <url>
 
 # Using local installation
-pnpm run scrape show-content <html|text> <url>
+pnpm run scrape scrape <html|text> <url>
 ```
 
 Example:
 ```bash
-npx @uratmangun/scraper-tool show-content html https://example.com
+npx @uratmangun/scraper-tool scrape html https://example.com
 # or
-npx @uratmangun/scraper-tool show-content text https://example.com
+npx @uratmangun/scraper-tool scrape text https://example.com
 ```
 
 This will display either the HTML or plain text content of the specified URL, depending on the format chosen.
