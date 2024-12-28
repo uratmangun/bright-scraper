@@ -1,6 +1,6 @@
 import { chromium } from 'playwright';
 import dotenv from 'dotenv';
-
+import { searchParser } from './convert-search.mjs';
 // Load environment variables
 dotenv.config({ path: '.env.local' });
 
@@ -36,7 +36,8 @@ async function main() {
             process.exit(1);
         }
         const html = await getGoogleHtml(query);
-        console.log(html);
+        const parsed = await searchParser(html);
+        console.log(parsed);
     } catch (error) {
         console.error('Main error:', error);
     }
