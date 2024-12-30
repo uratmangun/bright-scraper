@@ -1,17 +1,17 @@
 import { chromium } from 'playwright';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { searchParser } from './convert-search.mjs';
+import { htmlToMarkdown } from './convert-html.mjs';
+import { searchBrave } from './brave.mjs';
 
 dotenv.config({ path: '.env.local' });
 
 /**
  * Scrapes content from a given URL using Playwright with CDP connection
  * @param {string} url - The URL to scrape
- * @param {string} format - The output format ('html' or 'text')
  * @returns {Promise<Object>} - The scraped content
  */
-async function scrapeUrl(url, format = 'html') {
+async function scrapeUrl(url) {
     if (!process.env.BRIGHT_PLAYWRIGHT_URL) {
         throw new Error('BRIGHT_PLAYWRIGHT_URL environment variable is not set');
     }
@@ -25,13 +25,8 @@ async function scrapeUrl(url, format = 'html') {
         await page.goto(url, { timeout: 60000 });
         await page.waitForLoadState('networkidle');
 
-        if (format === 'text') {
-            const text = await page.textContent('body');
-            return { text };
-        } else {
-            const html = await page.content();
-            return { html };
-        }
+        const html = await page.content();
+        return { html };
     } catch (error) {
         console.error('Error during scraping:', error);
         throw error;
@@ -92,14 +87,14 @@ async function getGoogleHtml(query = '', baseUrl = 'https://www.google.com/searc
 
 /**
  * Shows the content of a given URL in specified format
- * @param {string} format - The output format ('html' or 'text')
  * @param {string} url - The URL to show content from
  * @returns {Promise<void>}
  */
-async function showContent(format, url) {
+async function showContent(url) {
     try {
-        const result = await scrapeUrl(url, format);
-        console.log(result[format]);
+        const result = await scrapeUrl(url);
+        const parsed = await htmlToMarkdown(result.html);
+        console.log(parsed.choices[0].message.content);
     } catch (error) {
         console.error('Error showing content:', error);
         throw error;
@@ -107,17 +102,19 @@ async function showContent(format, url) {
 }
 
 /**
- * Performs a Google search and shows the results
+ * Performs a search using Brave Search API and shows the results
  * @param {string} query - Search query
  * @returns {Promise<void>}
  */
 async function search(query) {
     try {
-        
-        const html = await getGoogleHtml(query);
-        
-        const parsed = await searchParser(html);
-        console.log(parsed.choices[0].message.content);
+        const results = await searchBrave(query);
+        const simplifiedResults = results.web.results.map(({ title, url, description }) => ({
+            title,
+            url,
+            description
+        }));
+        console.log(JSON.stringify(simplifiedResults, null, 2));
     } catch (error) {
         console.error('Search error:', error);
         throw error;
@@ -131,7 +128,7 @@ async function main() {
     if (!command) {
         console.error('Please provide a command.');
         console.error('Usage:');
-        console.error('  pnpm run tool scrape <html|text> <url>');
+        console.error('  pnpm run tool scrape <url>');
         console.error('  pnpm run tool search <query>');
         process.exit(1);
     }
@@ -139,17 +136,12 @@ async function main() {
     try {
         switch (command.toLowerCase()) {
             case 'scrape':
-                if (args.length < 2) {
-                    console.error('Please provide the format and URL to scrape.');
-                    console.error('Usage: pnpm run tool scrape <html|text> <url>');
+                if (args.length < 1) {
+                    console.error('Please provide the URL to scrape.');
+                    console.error('Usage: pnpm run tool scrape <url>');
                     process.exit(1);
                 }
-                const format = args[0].toLowerCase();
-                if (format !== 'html' && format !== 'text') {
-                    console.error('Invalid format. Use either "html" or "text".');
-                    process.exit(1);
-                }
-                await showContent(format, args[1]);
+                await showContent(args[0]);
                 break;
 
             case 'search':
@@ -164,7 +156,7 @@ async function main() {
             default:
                 console.error('Invalid command. Use either "scrape" or "search".');
                 console.error('Usage:');
-                console.error('  pnpm run tool scrape <html|text> <url>');
+                console.error('  pnpm run tool scrape <url>');
                 console.error('  pnpm run tool search <query>');
                 process.exit(1);
         }

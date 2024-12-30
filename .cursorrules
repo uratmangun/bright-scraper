@@ -1,0 +1,123 @@
+f you don't know the answer, try to search it on the internet. You can do so by running the following command:
+
+```
+npx @uratmangun/scraper-tool search "<query>"
+```
+
+Let's say the query is "how to install frog.fm".
+
+```
+npx @uratmangun/scraper-tool search "how to install frog.fm"
+```
+
+You will get the result in the following format:
+
+```
+[
+  {
+    "description": "Oct 28, 2024 — Install Frog via your package manager or build from source. Package Manager. Install the required packages. pnpm",
+    "title": "Installation",
+    "url": "https://frog.fm/installation"
+  },
+  {
+    "description": "Nov 5, 2024 — Manual Installation. You can install Frog in an existing project, or start from scratch, by installing Frog as a dependency.",
+    "title": "Getting started",
+    "url": "https://frog.fm/getting-started"
+  },
+ {
+    "description": "In this video we're going to take a look at frog. FM which is a new framework for building forecaster frames.",
+    "title": "Frog.fm Tutorial - Easy Framework For Farcaster Frames",
+    "url": "https://www.youtube.com/watch?v=zz_q_YkeWIk"
+  },
+  {
+    "description": "Oct 28, 2024 — Manual Installation · Install Next.js · Build your Frame · Add Handlers · Setup Devtools · Add Scripts to package.json · Navigate to Frame · Bonus: ...",
+      "title": "Next.js",
+    "url": "https://frog.fm/platforms/next"
+  },
+  {
+    "description": "Nov 5, 2024 — Global Install. First, install frog globally with your package manager: npm pnpm yarn bun. npm. npm i -g frog. Then, run the frog command to...",
+     "title": "Devtools",
+    "url": "https://frog.fm/concepts/devtools"
+  },
+    {
+    "description": "Oct 28, 2024 — Manual Installation · Install Vercel · Build your Frame · Add Vercel Handlers · Setup Devtools · Add Scripts to package.json · Navigate to Frame.",
+     "title": "Vercel Serverless",
+    "url": "https://frog.fm/platforms/vercel"
+  },
+  {
+    "description": "Nov 5, 2024 — Setup Devtools. Add Frog Devtools after all frames are defined. This way the devtools can automatically discover all your frames.",
+        "title": "Node.js",
+    "url": "https://frog.fm/platforms/node"
+  },
+   {
+    "description": "Nov 5, 2024 — Frog is built on top of Hono (a fast & lightweight Web Framework), extended with a first-class API for Farcaster Frames.",
+      "title": "Overview",
+    "url": "https://frog.fm/concepts/overview"
+  },
+    {
+    "description": "In this article, you will learn how to create a gasless Farcaster NFT mint frame with Frog.fm and Kriptonio. ... After that, let's install the Kriptonio SDK.",
+        "title": "How to Create a Gasless Farcaster NFT Mint Frame with Frog ...",
+    "url": "https://docs.kriptonio.com/blog/farcaster-gasless-nft-frame/"
+  },
+  {
+      "description": "Request for the instructions to include the proper snippet for Vercel integration in Hono. Docs: https://frog.fm/platforms/vercel#setup-devtools",
+      "title": "Manual Vercel Installation Instructions for Hono Support #252",
+      "url": "https://github.com/wevm/frog/discussions/252"
+  }
+]
+```
+
+Pick one of the results you think is the most relevant to the user's query. for example you pick the first one.
+
+```
+https://frog.fm/installation
+```
+
+If you want to open the link, you can do so by running the following command:
+
+```
+npx @uratmangun/scraper-tool scrape <url>
+```
+
+You will get the content in the markdown format:
+
+
+```markdown
+# Installation
+Install Frog via your package manager or build from source.
+
+## Package Manager
+Install the required packages.
+
+<div dir="ltr" data-orientation="horizontal" class="vocs_CodeGroup vocs_Tabs"><div role="tablist" aria-orientation="horizontal" aria-label="Code group" class="vocs_Tabs_list" tabindex="0" data-orientation="horizontal" style="outline:none"><button type="button" role="tab" aria-selected="true" aria-controls="radix-:R15r:-content-pnpm" data-state="active" id="radix-:R15r:-trigger-pnpm" class="vocs_Tabs_trigger" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">pnpm</button><button type="button" role="tab" aria-selected="false" aria-controls="radix-:R15r:-content-npm" data-state="inactive" id="radix-:R15r:-trigger-npm" class="vocs_Tabs_trigger" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">npm</button><button type="button" role="tab" aria-selected="false" aria-controls="radix-:R15r:-content-yarn" data-state="inactive" id="radix-:R15r:-trigger-yarn" class="vocs_Tabs_trigger" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">yarn</button><button type="button" role="tab" aria-selected="false" aria-controls="radix-:R15r:-content-bun" data-state="inactive" id="radix-:R15r:-trigger-bun" class="vocs_Tabs_trigger" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">bun</button></div><div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:R15r:-trigger-pnpm" id="radix-:R15r:-content-pnpm" tabindex="0" data-shiki="true" class="vocs_Tabs_content" style="animation-duration:0s"><div class="vocs_CodeBlock"><div class="vocs_CodeTitle"><div aria-label="Terminal" class="vocs_Icon" role="img" style="margin-top:3px;--vocs_Icon_size:14px"><svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79 95" fill="none"><title>Terminal</title><path fill="currentColor" d="M38.281 34.033c0-1.074-.39-2.05-1.22-2.88L6.885 1.171C6.152.39 5.175 0 4.053 0 1.758 0 0 1.709 0 4.004c0 1.074.488 2.1 1.172 2.88l27.295 27.15L1.172 61.181C.488 61.962 0 62.939 0 64.062c0 2.295 1.758 4.004 4.053 4.004 1.123 0 2.1-.39 2.832-1.172l30.176-29.98c.83-.83 1.22-1.807 1.22-2.88Z"></path><path stroke="currentColor" stroke-linecap="round" stroke-width="8px" d="M36 75h55"></path></svg></div>pnpm</div><div class="vocs_Pre_wrapper"><pre style="background-color:#ffffff;--shiki-dark-bg:#1b1e28;color:#393a34;--shiki-dark:#a6accd" tabindex="0" data-title="pnpm" data-lang="bash" class="shiki shiki-themes vitesse-light poimandres vocs_Pre"><code class="vocs_Code"><span class="line vocs_Span"><span style="color:#59873A;--shiki-dark:#91B4D5" class="vocs_Span">pnpm</span><span style="color:#B56959;--shiki-dark:#ADD7FF" class="vocs_Span"> add</span><span style="color:#B56959;--shiki-dark:#ADD7FF" class="vocs_Span"> frog</span><span style="color:#B56959;--shiki-dark:#ADD7FF" class="vocs_Span"> hono</span></span></code></pre></div></div></div><div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:R15r:-trigger-npm" hidden="" id="radix-:R15r:-content-npm" tabindex="0" data-shiki="true" class="vocs_Tabs_content"></div><div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:R15r:-trigger-yarn" hidden="" id="radix-:R15r:-content-yarn" tabindex="0" data-shiki="true" class="vocs_Tabs_content"></div><div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:R15r:-trigger-bun" hidden="" id="radix-:R15r:-content-bun" tabindex="0" data-shiki="true" class="vocs_Tabs_content"></div></div>
+
+*   [Hono](https://github.com/honojs/hono) is a small, simple, and ultrafast web framework for the Edges.
+*   [TypeScript](https://github.com/microsoft/TypeScript) is optional, but highly recommended.
+
+## Using Unreleased Commits
+If you can't wait for a new release to test the latest features, you can either install from the `canary` tag (tracks the [main](https://github.com/wevm/frog/tree/main) branch).
+
+<div dir="ltr" data-orientation="horizontal" class="vocs_CodeGroup vocs_Tabs"><div role="tablist" aria-orientation="horizontal" aria-label="Code group" class="vocs_Tabs_list" tabindex="0" data-orientation="horizontal" style="outline:none"><button type="button" role="tab" aria-selected="true" aria-controls="radix-:R25r:-content-pnpm" data-state="active" id="radix-:R25r:-trigger-pnpm" class="vocs_Tabs_trigger" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">pnpm</button><button type="button" role="tab" aria-selected="false" aria-controls="radix-:R25r:-content-npm" data-state="inactive" id="radix-:R25r:-trigger-npm" class="vocs_Tabs_trigger" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">npm</button><button type="button" role="tab" aria-selected="false" aria-controls="radix-:R25r:-content-yarn" data-state="inactive" id="radix-:R25r:-trigger-yarn" class="vocs_Tabs_trigger" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">yarn</button><button type="button" role="tab" aria-selected="false" aria-controls="radix-:R25r:-content-bun" data-state="inactive" id="radix-:R25r:-trigger-bun" class="vocs_Tabs_trigger" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">bun</button></div><div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:R25r:-trigger-pnpm" id="radix-:R25r:-content-pnpm" tabindex="0" data-shiki="true" class="vocs_Tabs_content" style="animation-duration:0s"><div class="vocs_CodeBlock"><div class="vocs_CodeTitle"><div aria-label="Terminal" class="vocs_Icon" role="img" style="margin-top:3px;--vocs_Icon_size:14px"><svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79 95" fill="none"><title>Terminal</title><path fill="currentColor" d="M38.281 34.033c0-1.074-.39-2.05-1.22-2.88L6.885 1.171C6.152.39 5.175 0 4.053 0 1.758 0 0 1.709 0 4.004c0 1.074.488 2.1 1.172 2.88l27.295 27.15L1.172 61.181C.488 61.962 0 62.939 0 64.062c0 2.295 1.758 4.004 4.053 4.004 1.123 0 2.1-.39 2.832-1.172l30.176-29.98c.83-.83 1.22-1.807 1.22-2.88Z"></path><path stroke="currentColor" stroke-linecap="round" stroke-width="8px" d="M36 75h55"></path></svg></div>pnpm</div><div class="vocs_Pre_wrapper"><pre style="background-color:#ffffff;--shiki-dark-bg:#1b1e28;color:#393a34;--shiki-dark:#a6accd" tabindex="0" data-title="pnpm" data-lang="bash" class="shiki shiki-themes vitesse-light poimandres vocs_Pre"><code class="vocs_Code"><span class="line vocs_Span"><span style="color:#59873A;--shiki-dark:#91B4D5" class="vocs_Span">pnpm</span><span style="color:#B56959;--shiki-dark:#ADD7FF" class="vocs_Span"> add</span><span style="color:#B56959;--shiki-dark:#ADD7FF" class="vocs_Span"> frog@canary</span></span></code></pre></div></div></div><div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:R25r:-trigger-npm" hidden="" id="radix-:R25r:-content-npm" tabindex="0" data-shiki="true" class="vocs_Tabs_content"></div><div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:R25r:-trigger-yarn" hidden="" id="radix-:R25r:-content-yarn" tabindex="0" data-shiki="true" class="vocs_Tabs_content"></div><div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:R25r:-trigger-bun" hidden="" id="radix-:R25r:-content-bun" tabindex="0" data-shiki="true" class="vocs_Tabs_content"></div></div>
+
+Or clone the [Frog repo](https://github.com/wevm/frog) to your local machine, build, and link it yourself.
+
+```bash
+gh repo clone wevm/frog
+cd frog
+pnpm install
+pnpm build
+cd src
+pnpm link --global
+```
+
+Then go to the project where you are using Frog and run `pnpm link --global frog` (or the package manager that you used to link Frog globally). Make sure you installed the [required peer dependencies](#package-manager) and their versions are correct.
+
+## Security
+Ethereum-related projects are often targeted in attacks to steal users' assets. Make sure you follow security best-practices for your project. Some quick things to get started.
+
+*   Pin package versions, upgrade mindfully, and inspect lockfile changes to minimize the risk of [supply-chain attacks](https://nodejs.org/en/guides/security/#supply-chain-attacks).
+*   Install the [Socket Security](https://socket.dev) [GitHub App](https://github.com/apps/socket-security) to help detect and block supply-chain attacks.
+*   Add a [Content Security Policy](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html) to defend against external scripts running in your app.
+```
+
+Read that markdown and try to answer the question you asked.

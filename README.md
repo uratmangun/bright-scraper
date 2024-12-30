@@ -1,11 +1,12 @@
 # Web Scraper
 
-A powerful web scraping utility built with Playwright that can extract content and links from websites.
+A powerful web scraping utility built with Playwright that can extract content from websites and perform Brave searches.
 
 ## Prerequisites
 
 - Node.js 18+
-- pnpm (recommended) or bun
+- pnpm (recommended) or npm
+- Environment variables configured
 
 ## Installation & Usage
 
@@ -16,8 +17,10 @@ You can use this tool in two ways:
 Run directly without installation using npx:
 
 ```bash
-npx @uratmangun/scraper-tool scrape <text|html> <url>
-# or
+# For scraping content
+npx @uratmangun/scraper-tool scrape <url>
+
+# For searching
 npx @uratmangun/scraper-tool search "<query>"
 ```
 
@@ -26,8 +29,6 @@ npx @uratmangun/scraper-tool search "<query>"
 1. Install dependencies:
 ```bash
 pnpm install
-# or
-bun install
 ```
 
 2. Set up environment variables:
@@ -38,31 +39,24 @@ Then edit `.env.local` and set your `BRIGHT_PLAYWRIGHT_URL` for the Playwright C
 
 ## Commands
 
-### View Content
+### Scrape Content
 ```bash
 # Using npx
-npx @uratmangun/scraper-tool scrape <html|text> <url>
+npx @uratmangun/scraper-tool scrape <url>
 
 # Using local installation
-pnpm run scrape scrape <html|text> <url>
+pnpm run tool scrape <url>
 ```
 
-Example:
-```bash
-npx @uratmangun/scraper-tool scrape html https://example.com
-# or
-npx @uratmangun/scraper-tool scrape text https://example.com
-```
+This will scrape the content from the specified URL and convert it to markdown format.
 
-This will display either the HTML or plain text content of the specified URL, depending on the format chosen.
-
-### Google Search
+### Brave Search
 ```bash
 # Using npx
 npx @uratmangun/scraper-tool search "<query>"
 
 # Using local installation
-pnpm run search "<query>"
+pnpm run tool search "<query>"
 ```
 
 Example:
@@ -70,13 +64,25 @@ Example:
 npx @uratmangun/scraper-tool search "web scraping tutorials"
 ```
 
-This will fetch and display the HTML content of Google search results for your query.
+This will return search results from Brave Search API in the following format:
+```json
+[
+  {
+    "title": "Result Title",
+    "url": "https://example.com",
+    "description": "Result description..."
+  }
+  // ...more results
+]
+```
 
 ## Features
 
-- Connects to browser using CDP
+- Connects to browser using CDP (Chrome DevTools Protocol)
 - Waits for network idle state before scraping
 - Handles page timeouts (60 seconds)
-- Error handling and reporting
+- Converts HTML content to markdown
+- Removes unnecessary elements (scripts, styles, noscript tags)
+- Brave Search API integration
 - Environment variable configuration
-- Google search functionality
+- Error handling and reporting
